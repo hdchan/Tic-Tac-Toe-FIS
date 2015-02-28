@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSString *assignedShape;
 
-@property (nonatomic, strong) NSMutableArray *claimedLocations; // This stores info on the player's claimed boxes
+@property (nonatomic, copy) NSMutableArray *claimedLocations; // This stores info on the player's claimed boxes
+
+@property (nonatomic) BOOL isComputer;
 
 @end

@@ -7,7 +7,7 @@
         <!--Game View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="T3GameViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -19,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chz-sp-3tt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-Cd-2qV">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-Cd-2qV" userLabel="1">
                                         <rect key="frame" x="120" y="127" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -33,10 +33,10 @@
                                             <rect key="frame" x="8" y="8" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6JS-Lc-uPv"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G6e-wl-UoZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBY-ZG-mcn" userLabel="2">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBY-ZG-mcn" userLabel="2">
                                         <rect key="frame" x="285" y="127" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -50,10 +50,10 @@
                                             <rect key="frame" x="120" y="8" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OQD-uh-qMK"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qLe-OP-d9X"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eD8-6D-cf5">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eD8-6D-cf5" userLabel="4">
                                         <rect key="frame" x="120" y="269" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -67,10 +67,10 @@
                                             <rect key="frame" x="8" y="120" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4XT-Gt-CnY"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gYD-9b-M7g"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tE9-SI-mhG">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tE9-SI-mhG" userLabel="7">
                                         <rect key="frame" x="120" y="399" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -84,10 +84,10 @@
                                             <rect key="frame" x="8" y="232" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="u18-5X-gLw"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M1w-r8-sh5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olX-vr-BNZ">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olX-vr-BNZ" userLabel="8">
                                         <rect key="frame" x="285" y="399" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -101,10 +101,10 @@
                                             <rect key="frame" x="120" y="232" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GbC-V6-DhT"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GI8-xd-BBV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEA-et-uf9">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEA-et-uf9" userLabel="5">
                                         <rect key="frame" x="285" y="269" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -118,10 +118,10 @@
                                             <rect key="frame" x="120" y="120" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uF9-C6-Zcr"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8VY-0I-Rwv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-9Q-Mfa">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-9Q-Mfa" userLabel="3">
                                         <rect key="frame" x="199" y="133" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -135,10 +135,10 @@
                                             <rect key="frame" x="232" y="8" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="D05-C9-Mwa"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WzT-Ko-9Q2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRP-J1-XU2">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRP-J1-XU2" userLabel="6">
                                         <rect key="frame" x="199" y="275" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -152,10 +152,10 @@
                                             <rect key="frame" x="232" y="120" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9qV-EC-iY8"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UBP-W0-cDS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-rV-KJp">
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-rV-KJp" userLabel="9">
                                         <rect key="frame" x="199" y="405" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
@@ -169,7 +169,7 @@
                                             <rect key="frame" x="232" y="232" width="103" height="103"/>
                                         </variation>
                                         <connections>
-                                            <action selector="setShape:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ydm-io-ep9"/>
+                                            <action selector="playerTouchesTile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GWS-9S-oi3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -205,6 +205,15 @@
                                     <rect key="frame" x="16" y="162" width="343" height="343"/>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xs-4k-tmS">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="84" width="343" height="21"/>
+                                </variation>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbj-eb-k7q">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="New Game">
@@ -214,34 +223,37 @@
                                     <rect key="frame" x="162" y="550" width="76" height="30"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="149" y="571" width="76" height="30"/>
+                                    <rect key="frame" x="149" y="547" width="76" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="newGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SqG-Z1-gCE"/>
+                                    <action selector="newGameButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ln3-J4-zeD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xs-4k-tmS">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="84" width="343" height="21"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hwk-UL-qBL">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Computer"/>
+                                    <segment title="Player"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="127" y="513" width="149" height="29"/>
                                 </variation>
-                            </label>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Chz-sp-3tt"/>
-                                <exclude reference="hbj-eb-k7q"/>
                                 <exclude reference="8Xs-4k-tmS"/>
+                                <exclude reference="hbj-eb-k7q"/>
+                                <exclude reference="Hwk-UL-qBL"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Chz-sp-3tt"/>
                                 <include reference="hbj-eb-k7q"/>
+                                <include reference="Hwk-UL-qBL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -250,24 +262,21 @@
                             </mask>
                         </variation>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="gameMessage" destination="8Xs-4k-tmS" id="WAJ-vL-tKF"/>
-                        <outletCollection property="boardButtons" destination="tE9-SI-mhG" id="iM6-Ez-QH1"/>
-                        <outletCollection property="boardButtons" destination="EmO-rV-KJp" id="xeE-5e-cap"/>
-                        <outletCollection property="boardButtons" destination="olX-vr-BNZ" id="kdP-vc-32X"/>
-                        <outletCollection property="boardButtons" destination="VRP-J1-XU2" id="Sow-uf-dVz"/>
-                        <outletCollection property="boardButtons" destination="wEA-et-uf9" id="ay4-A4-kDH"/>
-                        <outletCollection property="boardButtons" destination="eD8-6D-cf5" id="C6D-Vs-1Vr"/>
-                        <outletCollection property="boardButtons" destination="FFb-9Q-Mfa" id="3Fn-bf-9yn"/>
-                        <outletCollection property="boardButtons" destination="WBY-ZG-mcn" id="2FQ-om-ljV"/>
-                        <outletCollection property="boardButtons" destination="VKf-Cd-2qV" id="VcY-Mw-G69"/>
+                        <outletCollection property="tileButton" destination="wEA-et-uf9" id="zrT-e4-r9O"/>
+                        <outletCollection property="tileButton" destination="FFb-9Q-Mfa" id="aEg-cl-QGv"/>
+                        <outletCollection property="tileButton" destination="VRP-J1-XU2" id="gRb-FH-nrE"/>
+                        <outletCollection property="tileButton" destination="EmO-rV-KJp" id="ayj-8W-Hqd"/>
+                        <outletCollection property="tileButton" destination="olX-vr-BNZ" id="ZbD-SC-s9T"/>
+                        <outletCollection property="tileButton" destination="WBY-ZG-mcn" id="bkY-Yx-610"/>
+                        <outletCollection property="tileButton" destination="VKf-Cd-2qV" id="nD2-TI-tgX"/>
+                        <outletCollection property="tileButton" destination="eD8-6D-cf5" id="8dW-4t-klM"/>
+                        <outletCollection property="tileButton" destination="tE9-SI-mhG" id="ctX-c5-ORq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.75" y="135.375"/>
+            <point key="canvasLocation" x="999.75" y="130.875"/>
         </scene>
     </scenes>
 </document>

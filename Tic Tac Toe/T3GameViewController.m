@@ -9,7 +9,7 @@
 #import "T3GameViewController.h"
 #import "T3Game.h"
 
-@interface T3GameViewController ()
+@interface T3GameViewController () <T3GameDelegate>
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *boardButtons;
 
@@ -22,15 +22,18 @@
 
 @implementation T3GameViewController
 
-- (T3Game *)game {
+
+
+- (IBAction)playerSelectedButton:(UIButton*)sender {
     
-    if (!_game) _game = [[T3Game alloc] init] ;
+    [self setShape:sender];
     
-    return _game;
 }
 
-
-- (IBAction)setShape:(UIButton*)boardButton {
+- (void)setShape:(UIButton*)boardButton {
+    
+    NSLog(@"Current Player info %@",self.game.currentPlayersTurn.assignedShape);
+    NSLog(@"%@",self.boardButtons);
     
     [boardButton setBackgroundColor:[UIColor lightGrayColor]];
     
@@ -43,6 +46,8 @@
         [boardButton setTitleColor:[UIColor orangeColor] forState:UIControlStateDisabled];
         
     } else if ([self.game.currentPlayersTurn.assignedShape  isEqual: @"O"]) {
+        
+        NSLog(@"Putting it here");
         
         [boardButton setTitle:@"O" forState:UIControlStateDisabled];
         
@@ -97,11 +102,17 @@
 
 }
 
+
+
 - (IBAction)newGame:(id)sender {
+    
+    
     
     NSLog(@"Starting a new game");
     
-    self.game = [[T3Game alloc] init]; // clear game data
+    self.game = [[T3Game alloc] initWithDelegate:self]; // clear game data
+    
+    [self.game computersMove];
     
     for (UIButton *boardButton in self.boardButtons) { // reset UI buttons to original state
         
@@ -118,12 +129,35 @@
     
 }
 
+#pragma mark - Computer's move 
+
+- (void)moveMadeBy:(T3Computer *)computer atLocation:(NSInteger )location {
+    
+    NSLog(@"%@ made a move at %li",self.game,(long)location);
+    //NSLog(@"%@",self.boardButtons);
+    for (UIButton *button in self.boardButtons) {
+        
+        if (button.tag == location) {
+            
+            [self setShape:button];
+            
+            break;
+        }
+        
+    }
+    
+}
+
+#pragma mark - View Life Cycle
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    self.gameMessage.text = nil;
     [self newGame:nil]; // starting a new game
+    
     
 }
 

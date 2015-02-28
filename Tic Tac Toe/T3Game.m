@@ -11,9 +11,9 @@
 
 @interface T3Game ()
 
-@property (nonatomic, strong) T3Player *playerX;
+@property (nonatomic, strong) T3Player *player1;
 
-@property (nonatomic, strong) T3Player *playerO;
+@property (nonatomic, strong) T3Player *player2;
 
 @property (nonatomic, strong) NSArray *winningPaths;
 
@@ -22,8 +22,9 @@
 @end
 
 @implementation T3Game
+@synthesize delgate;
 
-- (id) init {
+-(id)initWithDelegate: (id<T3GameDelegate>)delegateObject{
     
     self = [super init];
     
@@ -35,14 +36,18 @@
         
         self.winner = nil;
         
-        self.playerX = [[T3Player alloc] init];
+        self.player1 = [[T3Player alloc] init];
         
-        self.playerX.assignedShape = @"X"; // assigning X's to player 1
+        self.player1.assignedShape = @"X"; // assigning X's to player 1
         
-        self.playerO = [[T3Player alloc] init];
+        self.player2 = [[T3Computer alloc] init];
         
-        self.playerO.assignedShape = @"O"; // assigning O's to player 2
+        self.player2.assignedShape = @"O"; // assigning O's to player 2
         
+        self.currentPlayersTurn = [[T3Player alloc] init];
+        
+        NSLog(@"%@",self.player1);
+        NSLog(@"%@",self.player2);
         
         NSUInteger randomize = arc4random_uniform(2);
         
@@ -50,46 +55,65 @@
         
         if (randomize == 0) {
             
-            self.currentPlayersTurn = self.playerX;
+            self.currentPlayersTurn = self.player1;
             
         } else if (randomize == 1) {
             
-            self.currentPlayersTurn = self.playerO;
+            self.currentPlayersTurn = self.player2;
             
         } else {
             
-            self.currentPlayersTurn = self.playerX; // default if no random number is generated
+            self.currentPlayersTurn = self.player1; // default if no random number is generated
             
         }
         
         NSLog(@"It is %@'s turn", self.currentPlayersTurn.name);
         
+        delgate = delegateObject;
+        
+                
     }
     
     return self;
 }
 
+- (void) computersMove {
+    
+    if ([self.currentPlayersTurn isKindOfClass:[T3Computer class]]) {
+        [delgate moveMadeBy:(T3Computer*)self.currentPlayersTurn
+                 atLocation:[(T3Computer*)self.currentPlayersTurn makeMoveWithOpponentData:self.player1.claimedLocations]];
+    }
+    
+    NSLog(@"Turn executed by %@", self.currentPlayersTurn.name);
 
+}
 
 - (void) swapTurns {
     
+    
     // alternating the player's turns
     
-    if (self.currentPlayersTurn == self.playerX) {
+    if (self.currentPlayersTurn == self.player1) {
         
-        self.currentPlayersTurn = self.playerO;
+        self.currentPlayersTurn = self.player2;
         
-    } else if (self.currentPlayersTurn == self.playerO) {
+    } else if (self.currentPlayersTurn == self.player2) {
         
-        self.currentPlayersTurn = self.playerX;
+        self.currentPlayersTurn = self.player1;
         
     }
     
-    NSLog(@"It is %@'s turn", self.currentPlayersTurn.name);
+    
+    [self computersMove];
+    
+    
+    
     
 }
 
 - (void) setShapeAt:(NSInteger *)location {
+    
+   
     
     NSLog(@"Setting %@ at location: %ld", self.currentPlayersTurn.assignedShape, *location);
     
